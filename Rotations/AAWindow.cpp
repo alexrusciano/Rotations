@@ -126,7 +126,7 @@ GLboolean WinCreate ( AAContext *aaContext, const wchar_t *title )
 //
 //      Start main windows loop
 //
-void WinLoop ( AAContext *aaContext )
+WPARAM WinLoop ( AAContext *aaContext )
 {
    MSG msg = { 0 };
    int done = 0;
@@ -158,4 +158,5 @@ void WinLoop ( AAContext *aaContext )
       if ( aaContext->updateFunc != NULL )
          aaContext->updateFunc ( aaContext, deltaTime );
    }
+   return msg.wParam;
 }

@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 #include "MTransform.h"
 #include <math.h>
 
@@ -25,7 +26,6 @@ void MNormalize(float* a)
 // on b, c should be replaced with a list
 void MGramSchmidt(float *a, float *b, float *c)
 {
-	float magnitude;
 	float scale;
 	scale = MDotProduct(b, c) / MDotProduct(c, c);
 	a[0] = b[0]-scale*c[0];

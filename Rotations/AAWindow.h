@@ -14,5 +14,5 @@ GLboolean WinCreate ( AAContext *paaContext, const wchar_t *title );
 //
 //      Start main windows loop
 //
-void WinLoop ( AAContext *paaContext );
+WPARAM WinLoop ( AAContext *paaContext );
 #endif

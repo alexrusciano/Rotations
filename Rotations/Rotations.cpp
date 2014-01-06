@@ -9,6 +9,7 @@
 #include "quaternions.h"
 #include "FreeImage.h"
 #include <math.h>
+#include <tchar.h>
 
 #define PI 3.1415926535897932384626433832795f
 
@@ -198,7 +199,6 @@ bool clickIntersection(AAContext* aaContext, POINT point, float *intersectionM)
 
 void centerIntersection(AAContext *aaContext, float *intersectionM)
 {
-	MMatrix iP;
 	UserData *userData = (UserData*) aaContext->userData;
 	float rayDir[4];
 	rayDir[0] = userData->sphere->modelT->m[3][0]-userData->eye[0];
@@ -268,6 +268,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 	userData.eye[2] = -8.0f;
 	aaRegisterKeyFunc(&aaContext, KeyFunc);
 	aaRegisterDrawFunc(&aaContext, Draw);
-	WinLoop(&aaContext);
+	WPARAM result = WinLoop(&aaContext);
 	Cleanup(&aaContext);
+	return result;
 }
