@@ -1,5 +1,7 @@
-// Rotations.cpp : Defines the entry point for the application.
-// texture from http://www.celestiamotherlode.net/catalog/earth.php
+//
+// Rotations.cpp
+// Defines entry point for application
+//
 
 #include "Rotations.h"
 #include "AAWindow.h"
@@ -25,10 +27,8 @@ typedef struct
 
 typedef struct
 {
-   // Handle to a program object
    GLuint programObject;
    
-   // Attribute locations
    GLuint earth_texture;
    GLint texLoc;
    GLint  positionLoc;
